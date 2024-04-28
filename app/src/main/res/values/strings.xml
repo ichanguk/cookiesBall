@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">cookiesBall</string>
     <string name="game_start">START</string>
-
+    <string name="input">입  력</string>
 </resources>
