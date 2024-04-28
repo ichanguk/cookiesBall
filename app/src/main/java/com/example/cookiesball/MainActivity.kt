@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayoutManager.VERTICAL
             )
         )
+        binding.systemText.text = "숫자를 입력해 주세요"
 
         binding.inputBtn.setOnClickListener {
             var newResult: String? = null
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                 if (!checkValidFlag(flag)) {
                     binding.systemText.text = "1 또는 2를 입력해주세요\n"
                 } else {
+                    binding.systemText.text = "숫자를 입력해 주세요"
                     gameOver = false
                     results.clear()
                 }
