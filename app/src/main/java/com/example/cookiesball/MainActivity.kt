@@ -1,5 +1,6 @@
 package com.example.cookiesball
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -54,9 +55,14 @@ class MainActivity : AppCompatActivity() {
                 if (!checkValidFlag(flag)) {
                     binding.systemText.text = "1 또는 2를 입력해주세요\n"
                 } else {
-                    binding.systemText.text = "숫자를 입력해 주세요"
                     gameOver = false
                     results.clear()
+                    if (flag == "1") {
+                        binding.systemText.text = "숫자를 입력해 주세요"
+                    } else {
+                        val intent = Intent(this, StartActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
             binding.inputText.text.clear()
@@ -69,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun play(inputNumString: String): String {
         resetMatchResultMap(matchResultMap)
 
-        if (flag == "1") {
+        if (flag == "1" || flag == "2") {
             goalNumString = generateGoalNum()
             flag = "0"
             gameOver = false
